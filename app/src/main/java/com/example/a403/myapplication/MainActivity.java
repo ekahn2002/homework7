@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnAdd, btnSub, btnMul, btnDiv, btnRem;
     TextView textView;
     String su1, su2;
-    float result;
+    double result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 if(su1.isEmpty() || su2.isEmpty()){
                     Toast.makeText(getApplicationContext(), "오류 : 값을 입력하세요", Toast.LENGTH_SHORT).show();
                 }
-                    result = Float.parseFloat(su1) + Float.parseFloat(su2);
+                else {
+                    result = Double.parseDouble(su1) + Double.parseDouble(su2);
                     textView.setText("계산 결과 : " + result);
+                }
             }
         });
 
@@ -54,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 if(su1.isEmpty() || su2.isEmpty()){
                     Toast.makeText(getApplicationContext(), "오류 : 값을 입력하세요", Toast.LENGTH_SHORT).show();
                 }
-                    result = Float.parseFloat(su1) - Float.parseFloat(su2);
+                else {
+                    result = Double.parseDouble(su1) - Double.parseDouble(su2);
                     textView.setText("계산 결과 : " + result);
+                }
             }
         });
 
@@ -68,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 if(su1.isEmpty() || su2.isEmpty()){
                     Toast.makeText(getApplicationContext(), "오류 : 값을 입력하세요", Toast.LENGTH_SHORT).show();
                 }
-                    result = Float.parseFloat(su1) * Float.parseFloat(su2);
+                else {
+                    result = Double.parseDouble(su1) * Double.parseDouble(su2);
                     textView.setText("계산 결과 : " + result);
+                }
             }
         });
 
@@ -82,12 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 if(su1.isEmpty() || su2.isEmpty()){
                     Toast.makeText(getApplicationContext(), "오류 : 값을 입력하세요", Toast.LENGTH_SHORT).show();
                 }
-                else if(Float.parseFloat(su2) == 0){
+                else if(Double.parseDouble(su2) == 0){
                     Toast.makeText(getApplicationContext(), "오류 : 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                    result = Float.parseFloat(su1) / Float.parseFloat(su2);
+                else {
+                    result = Double.parseDouble(su1) / Double.parseDouble(su2);
                     textView.setText("계산 결과 : " + result);
+                }
             }
         });
 
@@ -100,8 +108,10 @@ public class MainActivity extends AppCompatActivity {
                 if(su1.isEmpty() || su2.isEmpty()){
                     Toast.makeText(getApplicationContext(), "오류 : 값을 입력하세요", Toast.LENGTH_SHORT).show();
                 }
-                    result = Float.parseFloat(su1) % Float.parseFloat(su2);
+                else {
+                    result = Double.parseDouble(su1) % Double.parseDouble(su2);
                     textView.setText("계산 결과 : " + result);
+                }
             }
         });
     }
